@@ -1,0 +1,15 @@
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Node (if a student's local tooling generates these — not required by this course)
+node_modules/
+
+# PHP
+vendor/
+
+# Common accidental local-server artifacts
+*.log
