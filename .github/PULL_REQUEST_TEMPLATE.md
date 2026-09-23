@@ -1,13 +1,17 @@
 ### Which assignment is this?
-<!-- e.g. Week 2 — HTML Basics -->
+<!-- The folder name, e.g. week02-html-basics -->
 
-### Your name and roll number
-<!-- required — this is how your instructor matches this PR to you in the gradebook -->
+<!--
+  Do NOT write your roll number, phone number or email here.
+  This repository is public. Your instructor links your GitHub username to
+  your roll number privately.
+-->
 
 ### Checklist before requesting review
-- [ ] I edited only the file(s) inside my assignment's folder (I did not touch `tests/` or other weeks' folders)
+- [ ] My branch has the same name as the assignment folder (e.g. `week02-html-basics`)
+- [ ] I changed only files inside that one assignment folder, and nothing inside its `tests/` folder
+- [ ] I replaced the author placeholder with my own GitHub username
 - [ ] I ran the tests myself before pushing, and understand any that are still failing
-- [ ] My branch is named after the assignment (e.g. `week02-html-basics`)
 - [ ] My commit message(s) describe what I did, not just "update" or "done"
 
 ### Anything you want the instructor to know?

@@ -26,13 +26,17 @@ combination.
 | **Push** | Uploading your commits from the lab PC back up to your fork on GitHub. |
 | **Pull** | Downloading commits from GitHub down to the lab PC (the opposite of push). |
 | **Pull Request (PR)** | A formal request asking "please review my branch and consider it as a submission." This is how you turn in homework in this course. |
-| **Merge** | Combining a branch's changes into another branch (usually `main`). Your instructor merges — or simply reviews and grades — your PR. |
-| **CI (Continuous Integration)** | Automated checks (tests) that run the moment you open a PR, checking your code without a human needing to run it by hand. |
+| **Remote** | A named link from your local folder to a copy on GitHub. You'll have two: `origin` (your fork, which you push to) and `upstream` (the course repository, which you pull new assignments from). |
+| **Merge** | Combining a branch's changes into another branch (usually `main`). In this course only your Week 1 roster PR is merged. Assignment PRs are reviewed and graded without being merged. |
+| **CI (Continuous Integration)** | Automated checks (tests) that run the moment you open a PR, checking your code without a human needing to run it by hand. You'll see two: **Autograde** and **Submission guard**. |
 
 ## The mental model: why a *fork*, then a *branch*?
 
 - You **fork once**, at the start of the semester. This is your permanent
   personal copy of the course repository.
+- Your fork does **not** update itself when a new assignment is released.
+  You pull new work from `upstream` (the course repository) and push it to
+  `origin` (your fork).
 - You create a **new branch for every assignment** (e.g., `week02-html-basics`,
   `week04-css-box-model`). Each branch is its own independent workspace, so a
   mistake in one assignment can never break another, and you can have several
@@ -61,8 +65,14 @@ git checkout -b new-branch-name
 # Switch to a branch that already exists
 git checkout branch-name
 
-# Download the latest version of a repo you don't have locally yet
+# Download your fork onto the lab PC
 git clone https://github.com/YOUR-USERNAME/web-technology-fall2026.git
+
+# Get newly released assignments from the course repository
+git pull upstream main
+
+# Show which remotes this folder is connected to
+git remote -v
 ```
 
 That's genuinely most of what you need. You will type `git status`, `git add`,
@@ -71,8 +81,8 @@ with that four-step rhythm first.
 
 ## A typical assignment, start to finish
 
-1. Make sure you're on your `main` branch and it's up to date (see
-   `submission-workflow.md` for the exact commands).
+1. Get the newest assignments: `git checkout main`, `git pull upstream main`,
+   `git push origin main` (see `submission-workflow.md`, Step 1).
 2. `git checkout -b weekNN-topic` — create your assignment branch.
 3. Open the assignment's `README.md` inside `assignments/weekNN-topic/` and
    read the spec.
@@ -83,8 +93,9 @@ with that four-step rhythm first.
 6. `git add`, `git commit -m "..."`, `git push origin weekNN-topic`.
 7. On github.com, open a Pull Request from your branch into the course
    repository's `main` branch.
-8. Watch the automated checks run on your PR (a small yellow dot turns into a
-   green check or a red cross within about a minute).
+8. Watch the two automated checks run on your PR, **Autograde** and
+   **Submission guard** (a small yellow dot turns into a green check or a
+   red cross within a minute or two).
 9. If something fails, go back to step 4, fix it, and repeat steps 5–6 — your
    existing Pull Request updates automatically, you do not need to open a new
    one.
@@ -99,5 +110,9 @@ with that four-step rhythm first.
   *your fork*, then open a Pull Request to propose those changes to the
   original repository. This is normal and is how all open-source
   contribution works.
+- **`git pull origin main` does not get new assignments.** `origin` is your
+  own fork. New assignments come from `git pull upstream main`.
+- **Passwords don't work for pushing.** The first push opens a sign-in
+  window. Choose "Sign in with your browser".
 - **A red ❌ on your PR is useful information, not a failure grade** — it's
   telling you exactly what to fix, before a human even looks at your code.

@@ -1,6 +1,7 @@
 // Week 2 Assignment tests — zero external dependencies, uses Node's
 // built-in test runner and assertion library (Node.js 18+).
-// Run with: node --test assignments/week02-html-basics/tests/
+// Run from the repository root with:
+//   node --test assignments/week02-html-basics/tests/test.js
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -53,30 +54,38 @@ test("has at least one link with a non-empty href", () => {
   assert.ok(links.length >= 1, "expected at least one <a href=\"...\"> link");
 });
 
-test("head includes a submission author tag naming your own GitHub username", () => {
-  const metaMatch =
-    html.match(/<meta\s+name=["']author["']\s+content=["']([^"']+)["']\s*\/?>/i) ||
-    html.match(/<meta\s+content=["']([^"']+)["']\s+name=["']author["']\s*\/?>/i);
-  assert.ok(metaMatch, 'missing <meta name="author" content="your-github-username"> in <head>');
+// Reads <meta name="author" content="..."> no matter the attribute order,
+// spacing, quote style, or extra attributes.
+function metaAuthor(source) {
+  for (const tag of source.match(/<meta\b[^>]*>/gi) || []) {
+    const attrs = {};
+    for (const m of tag.matchAll(/([a-zA-Z-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/g)) {
+      attrs[m[1].toLowerCase()] = m[2] ?? m[3] ?? m[4];
+    }
+    if ((attrs.name || "").toLowerCase() === "author") return (attrs.content || "").trim();
+  }
+  return null;
+}
 
-  const content = metaMatch[1].trim();
+test("head includes a submission author tag naming your own GitHub username", () => {
+  const content = metaAuthor(html);
+  assert.ok(content !== null, 'missing <meta name="author" content="your-github-username"> in <head>');
   assert.ok(
     content.length > 0 && content.toLowerCase() !== "your-github-username",
     "the author meta tag's content must be your real GitHub username, not the placeholder"
   );
 
-  // GITHUB_ACTOR is set automatically by GitHub Actions to whoever pushed
-  // the branch this PR is built from — comparing it here is what catches a
-  // wholesale copy of a classmate's file (they'd still show as its author).
-  const actor = process.env.GITHUB_ACTOR;
-  if (actor) {
+  // PR_AUTHOR is set by the Autograde workflow to the GitHub account that
+  // opened this Pull Request. A copied file still carries its original
+  // author's username, so it fails here.
+  const prAuthor = process.env.PR_AUTHOR;
+  if (prAuthor) {
     assert.equal(
       content.toLowerCase(),
-      actor.toLowerCase(),
-      `author meta tag says "${content}" but this PR was submitted by GitHub user "${actor}" ` +
-        "— this usually means the file was copied from someone else's submission"
+      prAuthor.toLowerCase(),
+      `author meta tag says "${content}" but this Pull Request was opened by GitHub user "${prAuthor}"`
     );
   } else {
-    console.log("  (skipping username match: GITHUB_ACTOR isn't set locally; CI checks it automatically)");
+    console.log("  (running locally: the username match is checked automatically on your Pull Request)");
   }
 });

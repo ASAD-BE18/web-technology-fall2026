@@ -1,0 +1,86 @@
+name: Autograde
+
+# One workflow for every assignment. When a Pull Request changes files inside
+# assignments/<folder>/, this runs that folder's tests:
+#   tests/test.js  -> node --test
+#   tests/test.php -> php
+# Releasing a new assignment only means adding its folder to assignments/ —
+# no per-week workflow file is needed.
+on:
+  pull_request:
+    paths:
+      - "assignments/**"
+
+# Read-only token. Pull Requests from forks never receive repository secrets,
+# so nothing in this workflow uses any.
+permissions:
+  contents: read
+
+concurrency:
+  group: autograde-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Run assignment tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the pull request's code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Run the tests for each changed assignment
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          # The GitHub account that opened this PR. The author-tag test
+          # compares it with the username written in the submission.
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          set -u
+          folders=$(git diff --name-only "$BASE_SHA" HEAD -- assignments/ | cut -d/ -f2 | sort -u)
+          if [ -z "$folders" ]; then
+            echo "No files inside assignments/<folder>/ were changed — nothing to test."
+            exit 0
+          fi
+
+          # PHP ships with GitHub's Ubuntu runners; install it only if missing.
+          command -v php >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq php-cli; }
+          php --version | head -1
+
+          status=0
+          for f in $folders; do
+            echo "::group::Assignment: $f"
+            if ! printf '%s' "$f" | grep -Eq '^[a-z0-9][a-z0-9-]*$'; then
+              echo "::error::'$f' is not a valid assignment folder name."
+              status=1; echo "::endgroup::"; continue
+            fi
+            if ! git cat-file -e "$BASE_SHA:assignments/$f/tests" 2>/dev/null; then
+              echo "::error::assignments/$f is not a released assignment (it has no tests on main)."
+              status=1; echo "::endgroup::"; continue
+            fi
+
+            # Always grade with the official tests from main, even if the PR
+            # changed them (the Submission guard check flags that separately).
+            rm -rf "assignments/$f/tests"
+            git checkout "$BASE_SHA" -- "assignments/$f/tests"
+
+            ran=0
+            if [ -f "assignments/$f/tests/test.js" ]; then
+              ran=1
+              node --test "assignments/$f/tests/test.js" || status=1
+            fi
+            if [ -f "assignments/$f/tests/test.php" ]; then
+              ran=1
+              php "assignments/$f/tests/test.php" || status=1
+            fi
+            [ "$ran" -eq 1 ] || { echo "::error::No tests/test.js or tests/test.php in $f"; status=1; }
+            echo "::endgroup::"
+          done
+          exit $status

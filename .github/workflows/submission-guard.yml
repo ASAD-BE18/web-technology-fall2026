@@ -1,0 +1,94 @@
+name: Submission guard
+
+# Checks WHICH files a Pull Request changes, never what they contain.
+#
+# It uses pull_request_target, so GitHub always runs the version of this file
+# that is on main — a student cannot edit it from their fork. For the same
+# reason it must NEVER check out or run code from the pull request: it only
+# checks out main and reads the PR's list of changed files from the API.
+#
+# A PR passes if it does exactly one of these:
+#   1. Changes files inside ONE released assignments/<folder>/, outside tests/
+#   2. Adds exactly one file, roster/<your-github-username>.md  (Week 1 lab)
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  guard:
+    name: Check changed files
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out main (NOT the pull request's code)
+        uses: actions/checkout@v5
+
+      - name: Check which files this PR changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -u
+          fail() { echo "::error::$1"; failed=1; }
+          failed=0
+
+          if [ "$BASE_REF" != "main" ]; then
+            fail "This PR targets '$BASE_REF'. Submissions must target the course repository's main branch."
+          fi
+
+          # One line per path; renamed files contribute both old and new paths.
+          gh api "repos/$REPO/pulls/$PR_NUMBER/files" --paginate \
+            --jq '.[] | .filename, (.previous_filename // empty)' | sort -u > changed.txt
+          echo "Files changed by this PR:"; sed 's/^/  /' changed.txt
+
+          if [ ! -s changed.txt ]; then
+            fail "This PR does not change any files."
+          fi
+
+          author_lc=$(printf '%s' "$PR_AUTHOR" | tr '[:upper:]' '[:lower:]')
+
+          if grep -q '^roster/' changed.txt; then
+            # ---- Week 1 roster PR ----
+            count=$(wc -l < changed.txt)
+            only=$(head -1 changed.txt | tr '[:upper:]' '[:lower:]')
+            if [ "$count" -ne 1 ] || [ "$only" != "roster/$author_lc.md" ]; then
+              fail "A roster PR must add exactly one file: roster/$PR_AUTHOR.md (named after YOUR GitHub username)."
+            fi
+          else
+            # ---- Assignment PR ----
+            outside=$(grep -v '^assignments/[^/]*/' changed.txt || true)
+            if [ -n "$outside" ]; then
+              fail "Only files inside assignments/<folder>/ may be changed. Outside that: $(echo $outside)"
+            fi
+
+            folders=$(grep '^assignments/[^/]*/' changed.txt | cut -d/ -f2 | sort -u)
+            nfolders=$(printf '%s\n' "$folders" | grep -c . || true)
+            if [ "$nfolders" -gt 1 ]; then
+              fail "This PR changes more than one assignment ($(echo $folders)). Use one branch and one PR per assignment."
+            fi
+
+            for f in $folders; do
+              if [ ! -d "assignments/$f/tests" ]; then
+                fail "assignments/$f is not a released assignment. Check the folder name."
+              fi
+              if grep -q "^assignments/$f/tests/" changed.txt; then
+                fail "Files in assignments/$f/tests/ must not be changed. Undo that (see docs/faq-troubleshooting.md)."
+              fi
+              if [ "$HEAD_REF" != "$f" ]; then
+                echo "::warning::Your branch is called '$HEAD_REF'. Next time, name it exactly '$f'."
+              fi
+            done
+          fi
+
+          if [ "$failed" -eq 0 ]; then
+            echo "Submission guard passed."
+          fi
+          exit $failed
