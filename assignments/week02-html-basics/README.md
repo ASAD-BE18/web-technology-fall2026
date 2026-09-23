@@ -1,12 +1,19 @@
-# Week 2 Assignment — HTML Basics
+# Lab Task 1 (Week 2) — HTML Basics
 
-**Weight:** 15 marks · **Tests:** `tests/test.js` (zero-dependency, uses Node's
-built-in test runner)
+| | |
+|---|---|
+| **Type** | Graded lab task — marked with the Lab Task Rubric (10 marks), part of *Lab performance & lab tasks* (15%) |
+| **Released** | Week 2 lab |
+| **Due** | Before your Week 3 lab starts |
+| **Branch name** | `week02-html-basics` |
+| **Files you edit** | `index.html` only |
+| **Tests** | `tests/test.js` (uses Node's built-in test runner — nothing to install) |
 
 ## What to do
 
 Edit `index.html` in this folder (do not rename it, do not move it) so that
-it is a personal "About Me" page meeting every requirement below.
+it is a personal "About Me" page meeting every requirement below. This is the
+same page you built in the Week 2 lab.
 
 ## Requirements
 
@@ -17,12 +24,11 @@ it is a personal "About Me" page meeting every requirement below.
 4. An unordered list (`<ul>`) with **at least 3** `<li>` items listing your
    interests.
 5. At least one `<img>` tag with a non-empty `alt` attribute (the image
-   itself does not need to exist/load — this course is about the HTML, not
+   itself does not need to exist/load — this task is about the HTML, not
    sourcing a real photo).
 6. At least one link (`<a href="...">`) to any real or example URL.
 7. In `<head>`, replace the placeholder in `<meta name="author" content="your-github-username">`
-   with your own GitHub username. This confirms the submission is yours — see
-   "Academic integrity" below.
+   with your own GitHub username. See "Academic integrity" below.
 
 ## How to test your own work before submitting
 
@@ -33,30 +39,35 @@ node --test assignments/week02-html-basics/tests/test.js
 ```
 
 Every line should show `# pass`. If any show `# fail`, read the failure
-message — it names exactly which requirement above wasn't met. (The author-tag
-test only checks your username automatically in CI, since it reads it from
-who actually pushed the branch — running locally it just checks the tag isn't
-left as the placeholder.)
+message — it names exactly which requirement above wasn't met. (On your lab
+PC the author-tag test only checks that you replaced the placeholder. On your
+Pull Request it also checks that the username matches the account that
+opened the PR.)
+
+## What you'll see on your Pull Request
+
+Two automatic checks:
+
+- **Autograde** — runs the same tests as above.
+- **Submission guard** — checks that you only changed files in this folder
+  and did not touch `tests/`.
+
+Both should be green. A green result does not by itself mean full marks —
+your instructor still reviews your code.
 
 ## Academic integrity
 
-Two automated checks exist to make copying a classmate's work harder, not
-just against the rules:
+- **The author tag (requirement 7)** must match the GitHub account that
+  opened the Pull Request. If you copy a classmate's file, it still has their
+  username in it, so the test fails.
+- **After the deadline, every submission is compared with every other one**
+  for this task. Close matches are reviewed by your instructor.
 
-- **The author tag (requirement 7)** must match the GitHub username that
-  submitted the Pull Request. Copying a classmate's `index.html` wholesale
-  carries their username in it, so the test fails with your name on the PR.
-- **A similarity check** (a separate, non-blocking item on your PR) compares
-  your submission against everyone else's for this assignment and flags close
-  matches for the instructor to review — it doesn't fail your build, but it
-  is visible on the PR.
-
-Writing your own HTML from the requirements above, even if it ends up
-structurally similar to a classmate's, is not a problem — copying their file
-and editing around it is what these checks are aimed at.
+Writing your own HTML from the requirements is fine, even if it ends up
+looking similar to a classmate's. Copying their file and editing it is not.
 
 ## Submission
 
-Follow the standard workflow in `docs/submission-workflow.md`:
-branch `week02-html-basics` → edit `index.html` → test locally → commit →
-push → open a Pull Request.
+Follow `docs/submission-workflow.md`: update `main` from `upstream` → branch
+`week02-html-basics` → edit `index.html` → test → commit → push → open a
+Pull Request.
