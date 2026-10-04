@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Society</title>
+    <meta name="author" content="your-github-username">
+    <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
+    <style>table, th, td { border: 1px solid black; }</style>
+</head>
+<body>
+    <!--
+        TODO (Lab 2): this page is built only from <div>s.
+        Rebuild it with semantic tags, then add the timetable and the form.
+        Follow Parts B and C of README.md. Delete this comment when you're done.
+    -->
+    <div class="top">
+        <div class="site-title">University Coding Society</div>
+        <div class="links">
+            <a href="#timetable">Timetable</a>
+            <a href="#join">Join</a>
+            <a href="#news">News</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="block" id="timetable">
+            <div class="heading">Weekly timetable</div>
+            <!-- TODO: the timetable <table> goes here -->
+        </div>
+
+        <div class="block" id="join">
+            <div class="heading">Join the society</div>
+            <!-- TODO: the registration <form> goes here -->
+        </div>
+
+        <div class="story" id="news">
+            <div class="heading">We won the hackathon</div>
+            <img src="team.jpg" alt="image">
+            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
+            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
+        </div>
+    </div>
+
+    <div class="bottom">University Coding Society, 2026</div>
+</body>
+</html>
