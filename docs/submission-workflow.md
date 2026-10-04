@@ -3,7 +3,7 @@
 Follow this page in order, every time. Once you've done it twice it becomes
 automatic.
 
-> **Where to type commands:** on Windows lab PCs, open **Git Bash** (it comes
+> **Where to type commands:** on Windows (your laptop or a university PC), open **Git Bash** (it comes
 > with Git — right-click inside a folder → "Open Git Bash here"). Every
 > command on this page is written for Git Bash.
 
@@ -16,7 +16,7 @@ Two names you'll see everywhere:
 
 ---
 
-## One-time setup (Week 1 lab)
+## One-time setup (before Lab 1)
 
 1. **Create a free GitHub account** at github.com. Choose a username you'd
    be happy for an employer to see. Use an email you'll still have after the
@@ -51,7 +51,7 @@ Two names you'll see everywhere:
 
 ## Start of every lab
 
-Lab PCs are shared, so you usually start from a fresh copy. Your work is
+On a shared university PC you usually start from a fresh copy. On your own laptop, clone once and reuse the folder. Your work is
 safe because it lives on GitHub once you've pushed it.
 
 ```bash
@@ -106,23 +106,23 @@ Use the exact folder name from `assignments/` as your branch name.
 
 **Starting the assignment:**
 ```bash
-git checkout -b week02-html-basics
+git checkout -b lab01-html-basics
 ```
 
 **Continuing it in a later lab** (after a fresh clone):
 ```bash
-git checkout week02-html-basics
+git checkout lab01-html-basics
 ```
 Git finds the branch on your fork and brings your earlier work back.
 
 ### Step 3 — Read the assignment spec
 
-Open `assignments/week02-html-basics/README.md` and read all of it before
+Open `assignments/lab01-html-basics/README.md` and read all of it before
 you touch any code. It also gives the due date.
 
 ### Step 4 — Do the assignment
 
-Edit the starter file(s) inside `assignments/week02-html-basics/`. **Don't
+Edit the starter file(s) inside `assignments/lab01-html-basics/`. **Don't
 rename files, and don't edit anything in the `tests/` folder** or anywhere
 outside this assignment's folder. The Submission guard check fails if you do.
 
@@ -133,7 +133,7 @@ these:
 
 ```bash
 # HTML / CSS / JavaScript assignments:
-node --test assignments/week02-html-basics/tests/test.js
+node --test assignments/lab01-html-basics/tests/test.js
 
 # PHP assignments:
 php assignments/week12-php-forms/tests/test.php
@@ -145,9 +145,9 @@ Your Pull Request runs these same tests.
 ### Step 6 — Commit and push
 
 ```bash
-git add assignments/week02-html-basics/
-git commit -m "Complete Week 2 HTML basics task"
-git push origin week02-html-basics
+git add assignments/lab01-html-basics/
+git commit -m "Complete Lab 1 HTML basics"
+git push origin lab01-html-basics
 ```
 
 ### Step 7 — Open a Pull Request

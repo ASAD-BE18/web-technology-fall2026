@@ -1,5 +1,5 @@
 ### Which assignment is this?
-<!-- The folder name, e.g. week02-html-basics -->
+<!-- The folder name, e.g. lab01-html-basics -->
 
 <!--
   Do NOT write your roll number, phone number or email here.
@@ -8,7 +8,7 @@
 -->
 
 ### Checklist before requesting review
-- [ ] My branch has the same name as the assignment folder (e.g. `week02-html-basics`)
+- [ ] My branch has the same name as the assignment folder (e.g. `lab01-html-basics`)
 - [ ] I changed only files inside that one assignment folder, and nothing inside its `tests/` folder
 - [ ] I replaced the author placeholder with my own GitHub username
 - [ ] I ran the tests myself before pushing, and understand any that are still failing

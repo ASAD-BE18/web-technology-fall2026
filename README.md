@@ -5,14 +5,14 @@ assignment lives here, in its own folder under `assignments/`, and you submit
 your work by opening a **Pull Request (PR)** — the same workflow real software
 teams use every day.
 
-You do not need your own computer for any of this. Everything below works from
-a shared lab PC with a free GitHub account, a text editor, a browser, Git
-(with Git Bash), Node.js and PHP. All of these are installed on the lab
-machines.
+Labs in this course are **take-home**: there is no lab session. You need a
+laptop or a university PC with a free GitHub account, a text editor, a
+browser, Git (with Git Bash) and Node.js 22. Every lab folder has a
+`README.md` that tells you exactly what to do.
 
 ## What you'll actually learn here
 
-Alongside HTML, CSS, JavaScript, and PHP, this repo teaches you real Git and
+Alongside HTML, CSS, JavaScript and Node.js, this repo teaches you real Git and
 GitHub — the version-control and collaboration tools used by virtually every
 professional software team and open-source project on Earth. By the end of
 the semester you will have:
@@ -31,7 +31,7 @@ contributing to any real open-source project or joining any dev team.
 
 1. **`docs/git-and-github-basics.md`** — if you are brand new to Git/GitHub,
    start here. It explains every term and command you'll need in plain
-   language. You'll set everything up together in the Week 1 lab.
+   language. Set everything up before you start Lab 1.
 2. **`docs/submission-workflow.md`** — the exact, step-by-step commands you
    will run for every single assignment, from forking this repo to opening
    your Pull Request. Bookmark this page; you'll use it every week.
@@ -61,7 +61,7 @@ What's graded here:
 
 | Folder | Counts toward |
 |---|---|
-| Weekly **lab tasks** (Weeks 2, 4, 9, 12) | Lab performance & lab tasks (Lab Task Rubric, 10 marks each) |
+| **Labs** (`labNN-...` folders, take-home) | The lab grade — the course's 1 lab credit hour (10 marks each; see each lab's README) |
 | **Assignment 1** (Week 6) and **Assignment 2** (Week 10) | Assignments (15 marks each) |
 | **Final project** | Final Project (presented in Week 14) |
 
@@ -84,7 +84,7 @@ username to your roll number privately.
 
 | Folder | What's in it |
 |---|---|
-| `assignments/weekNN-topic/` | One folder per graded assignment: a `README.md` with the spec, the starter file(s) you edit, and a `tests/` folder with the automated checks (read-only — don't edit these). **New assignments are added here throughout the semester, not all at once** — you'll only ever see the one currently assigned. |
+| `assignments/labNN-topic/` | One folder per graded assignment: a `README.md` with the spec, the starter file(s) you edit, and a `tests/` folder with the automated checks (read-only — don't edit these). **New assignments are added here throughout the semester, not all at once** — you'll only ever see the one currently assigned. |
 | `roster/` | Your Week 1 practice Pull Request: one file named after your GitHub username |
 | `docs/` | Git/GitHub reference material for students |
 | `.github/` | The automatic checks and the Pull Request template — don't change anything here |
@@ -113,18 +113,18 @@ git pull upstream main
 git push origin main
 
 # 4. For each assignment, create a new branch named after its folder:
-git checkout -b week02-html-basics
+git checkout -b lab01-html-basics
 
 # 5. Edit, test, then commit and push to YOUR fork:
-node --test assignments/week02-html-basics/tests/test.js
-git add assignments/week02-html-basics/
-git commit -m "Complete Week 2 HTML basics task"
-git push origin week02-html-basics
+node --test assignments/lab01-html-basics/tests/test.js
+git add assignments/lab01-html-basics/
+git commit -m "Complete Lab 1 HTML basics"
+git push origin lab01-html-basics
 
 # 6. On github.com, open a Pull Request from your branch into the
 #    course repo's main branch. Wait for the two checks to run.
 
-# 7. End of lab on a shared PC: sign Git out (see submission-workflow.md).
+# 7. On a shared university PC: sign Git out when you finish (see submission-workflow.md).
 ```
 
 Welcome to the course — and to Git and GitHub.

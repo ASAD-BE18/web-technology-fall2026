@@ -17,7 +17,7 @@ Your no-reply address is on github.com under **Settings → Emails**.
 ### Git asks for my password and then says "Authentication failed"
 GitHub doesn't accept account passwords from Git. When the sign-in window
 appears, choose **"Sign in with your browser"** and approve access in the
-browser. If no window appears, ask your instructor. The lab PC may need Git
+browser. If no window appears, ask your instructor. The PC may need Git
 Credential Manager (it comes with Git for Windows).
 
 ### I get "Permission denied" or "403" when I push
@@ -54,7 +54,7 @@ Switch back and bring the new work into your branch:
 ```bash
 git checkout main
 git pull upstream main
-git checkout week04-css-box-model
+git checkout lab03-css-selectors-box-model
 git merge main
 ```
 
@@ -68,11 +68,11 @@ GitHub guessed wrong.
 
 ### My checks say "Workflow awaiting approval"
 GitHub asks your instructor to approve checks for brand-new contributors.
-Nothing is wrong with your code. Tell your instructor in lab. It stops
+Nothing is wrong with your code. Tell your instructor in class. It stops
 happening after your roster PR is merged.
 
 ### The check is stuck on a yellow dot for a long time
-Give it a few minutes. When a whole lab submits at once, checks can queue.
+Give it a few minutes. When the whole class submits at once, checks can queue.
 If it's still stuck after 10 minutes, tell your instructor.
 
 ### Autograde failed but my code looks right to me
@@ -81,7 +81,7 @@ including which check failed and usually what was expected (for example,
 `expected at least 3 <li> items inside <ul>, found 2`). Read it line by
 line. It's almost always precise about the problem.
 
-### The author-tag test fails only on GitHub, not on the lab PC
+### The author-tag test fails only on GitHub, not on my computer
 The username in your file must match the GitHub account that **opened the
 Pull Request**. Check the spelling (capital letters don't matter). Also
 check you didn't start from a classmate's file.
@@ -90,7 +90,7 @@ check you didn't start from a classmate's file.
 It lists exactly which file broke the rule. Usually it's one of these:
 - **You edited something in `tests/`.** Restore it, commit, and push:
   ```bash
-  git checkout main -- assignments/week02-html-basics/tests/
+  git checkout main -- assignments/lab01-html-basics/tests/
   git commit -m "Restore original tests"
   git push
   ```
@@ -101,27 +101,27 @@ It lists exactly which file broke the rule. Usually it's one of these:
 
 ### I accidentally edited a file inside a `tests/` folder (not committed yet)
 ```bash
-git checkout -- assignments/week02-html-basics/tests/
+git checkout -- assignments/lab01-html-basics/tests/
 ```
 
 ### I started editing before creating a branch, and I'm still on `main`
 No problem. Move your uncommitted changes to a new branch:
 ```bash
-git checkout -b week02-html-basics
+git checkout -b lab01-html-basics
 ```
 Git brings your uncommitted edits over to the new branch.
 
 ### I want to abandon my changes and start an assignment over
 ```bash
-git checkout -- assignments/week02-html-basics/
+git checkout -- assignments/lab01-html-basics/
 ```
 This throws away uncommitted changes to that folder. **It cannot be
 undone.**
 
-### "fatal: A branch named 'week02-html-basics' already exists"
+### "fatal: A branch named 'lab01-html-basics' already exists"
 You created this branch earlier. Switch to it instead:
 ```bash
-git checkout week02-html-basics
+git checkout lab01-html-basics
 ```
 
 ### I opened two Pull Requests for the same assignment by mistake
@@ -140,5 +140,5 @@ You can't run the tests yourself this way, so read the Autograde output
 carefully.
 
 ### None of this covers my problem
-Copy the exact error message and bring it to lab. A precise error message is
+Copy the exact error message and bring it to class. A precise error message is
 almost always enough to find the problem quickly.

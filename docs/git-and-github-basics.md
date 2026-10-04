@@ -21,10 +21,10 @@ combination.
 | **Repository ("repo")** | A project folder that Git is keeping a history of. |
 | **Commit** | A saved "snapshot" of your project at one point in time, with a short message describing what changed. |
 | **Fork** | Your own personal copy of someone else's repository, under your own GitHub account. Forking the course repo gives you a copy you can freely edit without affecting anyone else's. |
-| **Clone** | Downloading a copy of a repository (usually your fork) from GitHub onto the lab PC you're sitting at. |
+| **Clone** | Downloading a copy of a repository (usually your fork) from GitHub onto the computer you are using. |
 | **Branch** | A separate, independent line of work inside a repo. You'll create a new branch for each assignment, so your assignments never get tangled together. |
-| **Push** | Uploading your commits from the lab PC back up to your fork on GitHub. |
-| **Pull** | Downloading commits from GitHub down to the lab PC (the opposite of push). |
+| **Push** | Uploading your commits from your computer back up to your fork on GitHub. |
+| **Pull** | Downloading commits from GitHub down to your computer (the opposite of push). |
 | **Pull Request (PR)** | A formal request asking "please review my branch and consider it as a submission." This is how you turn in homework in this course. |
 | **Remote** | A named link from your local folder to a copy on GitHub. You'll have two: `origin` (your fork, which you push to) and `upstream` (the course repository, which you pull new assignments from). |
 | **Merge** | Combining a branch's changes into another branch (usually `main`). In this course only your Week 1 roster PR is merged. Assignment PRs are reviewed and graded without being merged. |
@@ -37,8 +37,8 @@ combination.
 - Your fork does **not** update itself when a new assignment is released.
   You pull new work from `upstream` (the course repository) and push it to
   `origin` (your fork).
-- You create a **new branch for every assignment** (e.g., `week02-html-basics`,
-  `week04-css-box-model`). Each branch is its own independent workspace, so a
+- You create a **new branch for every assignment** (e.g., `lab01-html-basics`,
+  `lab03-css-selectors-box-model`). Each branch is its own independent workspace, so a
   mistake in one assignment can never break another, and you can have several
   assignments "in progress" at once without them interfering with each other.
 - You **open a Pull Request from that branch** back into the original course
@@ -65,7 +65,7 @@ git checkout -b new-branch-name
 # Switch to a branch that already exists
 git checkout branch-name
 
-# Download your fork onto the lab PC
+# Download your fork onto your computer
 git clone https://github.com/YOUR-USERNAME/web-technology-fall2026.git
 
 # Get newly released assignments from the course repository
@@ -83,14 +83,14 @@ with that four-step rhythm first.
 
 1. Get the newest assignments: `git checkout main`, `git pull upstream main`,
    `git push origin main` (see `submission-workflow.md`, Step 1).
-2. `git checkout -b weekNN-topic` — create your assignment branch.
-3. Open the assignment's `README.md` inside `assignments/weekNN-topic/` and
+2. `git checkout -b labNN-topic` — create your assignment branch.
+3. Open the assignment's `README.md` inside `assignments/labNN-topic/` and
    read the spec.
 4. Edit the starter file(s) in that same folder using your text editor.
 5. Test your own work locally (each assignment's `README.md` tells you the
-   exact command — usually something like `node --test assignments/weekNN-topic/tests/test.js`
-   or `php assignments/weekNN-topic/tests/test.php`).
-6. `git add`, `git commit -m "..."`, `git push origin weekNN-topic`.
+   exact command — usually something like `node --test assignments/labNN-topic/tests/test.js`
+   or `php assignments/labNN-topic/tests/test.php`).
+6. `git add`, `git commit -m "..."`, `git push origin labNN-topic`.
 7. On github.com, open a Pull Request from your branch into the course
    repository's `main` branch.
 8. Watch the two automated checks run on your PR, **Autograde** and
@@ -105,7 +105,7 @@ with that four-step rhythm first.
 - **"git add" does not save your work** — it only marks a file as ready to be
   included in your *next* commit. You still need `git commit`.
 - **Committing does not upload anything** — a commit only exists on your own
-  lab PC until you `git push`.
+  computer until you `git push`.
 - **You cannot push straight to the original course repository** — you push to
   *your fork*, then open a Pull Request to propose those changes to the
   original repository. This is normal and is how all open-source

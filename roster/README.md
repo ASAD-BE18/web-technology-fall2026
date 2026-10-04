@@ -1,4 +1,4 @@
-# Class roster — your first Pull Request (Week 1 lab)
+# Class roster — your first Pull Request (before Lab 1)
 
 Your first Pull Request in this course is a practice run. It adds **one file**
 to this folder, named after your GitHub username:
