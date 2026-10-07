@@ -10,6 +10,28 @@ laptop or a university PC with a free GitHub account, a text editor, a
 browser, Git (with Git Bash) and Node.js 22. Every lab folder has a
 `README.md` that tells you exactly what to do.
 
+## Labs
+
+Click a lab to open its task sheet. A link only works once that lab is
+released, in the week shown. Each lab is due 7 days after release.
+
+| Lab | Topic | Out in week | Task sheet |
+|---|---|---|---|
+| 1 | GitHub setup + HTML basics | 5 | [lab01-html-basics](assignments/lab01-html-basics/README.md) |
+| 2 | Tables, forms, semantic HTML | 5 | [lab02-tables-forms-semantic](assignments/lab02-tables-forms-semantic/README.md) |
+| 3 | CSS selectors, box model, colours, fonts | 6 | [lab03-css-selectors-box-model](assignments/lab03-css-selectors-box-model/README.md) |
+| 4 | Display, position, Flexbox | 6 | [lab04-flexbox](assignments/lab04-flexbox/README.md) |
+| 5 | Responsive design + CSS Grid | 7 | [lab05-responsive-grid](assignments/lab05-responsive-grid/README.md) |
+| 6 | JavaScript basics + functions | 7 | [lab06-js-basics-functions](assignments/lab06-js-basics-functions/README.md) |
+| 7 | Loops, arrays, objects, JSON | 8 | [lab07-arrays-objects-json](assignments/lab07-arrays-objects-json/README.md) |
+| 8 | DOM, events, form validation | 8 | [lab08-dom-events-validation](assignments/lab08-dom-events-validation/README.md) |
+| 9 | async/await + fetch | 9 | [lab09-async-fetch](assignments/lab09-async-fetch/README.md) |
+| 10 | Node, npm, first HTTP server | 9 | [lab10-node-http-server](assignments/lab10-node-http-server/README.md) |
+| 11 | Express routes, middleware, validation | 10 | [lab11-express-api](assignments/lab11-express-api/README.md) |
+| 12 | MongoDB + Mongoose CRUD API | 11 | [lab12-mongoose-crud](assignments/lab12-mongoose-crud/README.md) |
+| 13 | React: change a notes app | 12 | [lab13-react-notes](assignments/lab13-react-notes/README.md) |
+| 14 | Django: change a notes app | 13 | [lab14-django-notes](assignments/lab14-django-notes/README.md) |
+
 ## What you'll actually learn here
 
 Alongside HTML, CSS, JavaScript and Node.js, this repo teaches you real Git and
@@ -84,14 +106,14 @@ username to your roll number privately.
 
 | Folder | What's in it |
 |---|---|
-| `assignments/labNN-topic/` | One folder per graded assignment: a `README.md` with the spec, the starter file(s) you edit, and a `tests/` folder with the automated checks (read-only — don't edit these). **New assignments are added here throughout the semester, not all at once** — you'll only ever see the one currently assigned. |
+| `assignments/labNN-topic/` | One folder per graded assignment: a `README.md` with the spec, the starter file(s) you edit, and a `tests/` folder with the automated checks (read-only — don't edit these). **New assignments are added here throughout the semester, not all at once** — see the Labs table at the top for when each one comes out. |
 | `roster/` | Your Week 1 practice Pull Request: one file named after your GitHub username |
 | `docs/` | Git/GitHub reference material for students |
 | `.github/` | The automatic checks and the Pull Request template — don't change anything here |
 
 ## A new assignment shows up — now what?
 
-Nothing is announced in this README when a new assignment goes live. It
+A new lab is announced on Google Classroom and the class group. It
 appears in `assignments/` after you run `git pull upstream main` (Step 1 of
 `docs/submission-workflow.md`). **`git pull origin main` won't get it**,
 because `origin` is your own fork. Don't look for next week's assignment
