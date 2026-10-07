@@ -4,6 +4,9 @@ name: Autograde
 # assignments/<folder>/, this runs that folder's tests:
 #   tests/test.js  -> node --test
 #   tests/test.php -> php
+#   tests/test.py  -> python
+# If main has a package-lock.json or requirements.txt in that folder, the
+# packages are installed first, from main's copy (never the PR's).
 # Releasing a new assignment only means adding its folder to assignments/ —
 # no per-week workflow file is needed.
 on:
@@ -24,7 +27,7 @@ jobs:
   test:
     name: Run assignment tests
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out the pull request's code
         uses: actions/checkout@v5
@@ -35,6 +38,11 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: "22"
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
 
       - name: Run the tests for each changed assignment
         env:
@@ -71,6 +79,30 @@ jobs:
             rm -rf "assignments/$f/tests"
             git checkout "$BASE_SHA" -- "assignments/$f/tests"
 
+            # Same for the package lists: install exactly what main pins, so a
+            # PR cannot add or swap a package. --ignore-scripts stops packages
+            # running install hooks.
+            for dep in package.json package-lock.json requirements.txt; do
+              if git cat-file -e "$BASE_SHA:assignments/$f/$dep" 2>/dev/null; then
+                git checkout "$BASE_SHA" -- "assignments/$f/$dep"
+              fi
+            done
+            py=python
+            if git cat-file -e "$BASE_SHA:assignments/$f/package-lock.json" 2>/dev/null; then
+              if ! (cd "assignments/$f" && npm ci --ignore-scripts --no-audit --no-fund); then
+                echo "::error::Installing the npm packages for $f failed."
+                status=1; echo "::endgroup::"; continue
+              fi
+            fi
+            if git cat-file -e "$BASE_SHA:assignments/$f/requirements.txt" 2>/dev/null; then
+              venv="$RUNNER_TEMP/venv-$f"
+              if ! { python -m venv "$venv" && "$venv/bin/pip" install -q -r "assignments/$f/requirements.txt"; }; then
+                echo "::error::Installing the Python packages for $f failed."
+                status=1; echo "::endgroup::"; continue
+              fi
+              py="$venv/bin/python"
+            fi
+
             ran=0
             if [ -f "assignments/$f/tests/test.js" ]; then
               ran=1
@@ -80,7 +112,11 @@ jobs:
               ran=1
               php "assignments/$f/tests/test.php" || status=1
             fi
-            [ "$ran" -eq 1 ] || { echo "::error::No tests/test.js or tests/test.php in $f"; status=1; }
+            if [ -f "assignments/$f/tests/test.py" ]; then
+              ran=1
+              "$py" "assignments/$f/tests/test.py" || status=1
+            fi
+            [ "$ran" -eq 1 ] || { echo "::error::No tests/test.js, tests/test.php or tests/test.py in $f"; status=1; }
             echo "::endgroup::"
           done
           exit $status

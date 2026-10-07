@@ -13,3 +13,12 @@ vendor/
 
 # Common accidental local-server artifacts
 *.log
+
+# Secrets and local data (Labs 12 and 14) — never commit these
+.env
+db.sqlite3
+
+# Python (Lab 14)
+__pycache__/
+*.pyc
+.venv/
