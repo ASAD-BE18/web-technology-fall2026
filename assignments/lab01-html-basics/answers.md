@@ -5,11 +5,11 @@ words. Don't delete or change the question lines.
 
 ## Q1. What is the difference between `<ol>` and `<ul>`? Give one example of when you would use each.
 
-<ol> is a HTML tag to make a list where order of items matter like that (1,2,3),
+'<ol>' is a HTML tag to make a list where order of items matter like that (1,2,3),
 Example 1.rice
         2.coke
         3.Biryani 
-<ul> is a HTML tag make a list which is unorder like bullet points.
+'<ul>' is a HTML tag make a list which is unorder like bullet points.
 Example .rice
         .coke
         .Biryani
