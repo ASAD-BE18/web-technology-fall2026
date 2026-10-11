@@ -1,45 +1,89 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
-    <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
-    <style>table, th, td { border: 1px solid black; }</style>
+    <meta name="author" content="saif-rohyal">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
+
 <body>
-    <!--
-        TODO (Lab 2): this page is built only from <div>s.
-        Rebuild it with semantic tags, then add the timetable and the form.
-        Follow Parts B and C of README.md. Delete this comment when you're done.
-    -->
-    <div class="top">
-        <div class="site-title">University Coding Society</div>
-        <div class="links">
+    <header>
+        <h1>University Coding Society</h1>
+
+        <nav>
             <a href="#timetable">Timetable</a>
             <a href="#join">Join</a>
             <a href="#news">News</a>
-        </div>
-    </div>
+        </nav>
+    </header>
+    <main>
+        <section id="timetable">
+            <h2>Weekly Timetable</h2>   
+<table>
+    <tr>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Activity</th>
+    </tr>
+    <tr>
+        <td>Tuesday</td>
+        <td>09:00 AM - 10:30 AM</td>
+        <td>IT infrastructure</td>
+    </tr>
+    <tr>
+        <td>Wednesday</td>
+        <td>11:00 AM - 12:00 PM</td>
+        <td>Database Management</td>
+    </tr>
+    <tr>
+        <td>Thursday</td>
+        <td>10:00 AM - 11:00 AM</td>
+        <td>Web technologies</td>
+    </tr>
+    <tr>
+        <td>Friday</td>
+        <td>12:00 PM - 1:00 PM</td>
+        <td>Network Administration</td>
+    </tr>
+</table>
+        </section>
+        <section id="join">
+            <h2>Join the Society</h2>
+            <form>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="semester">Semester:</label>
+                <input type="number" id="semester" name="semester" required>    
+                <label for="agreement">I agree to the society rules:</label>
+                <input type="checkbox" id="agreement" name="agreement" required>
+                <button type="submit">Join</button>
+            </form>
+        </section>
+        <article id="news">
+            <h2>We Won the Hackathon</h2>
+            <img src="team.png" alt="Classmates standing together for a group photo at the new campus">
+            <p>Our team participated in a project competition and won first place by developing a full-stack website using Google Antigravity. We collaborated to build the website and used AI-powered development tools to support our work. This achievement helped us improve our teamwork, creativity, and web development skills.</p>
+            <p>
+                Read the
+                <a href="https://github.com/saifrohyal/">
+                    full article about our hackathon victory
+                </a>.
+            </p>
+        </article>
 
-    <div class="content">
-        <div class="block" id="timetable">
-            <div class="heading">Weekly timetable</div>
-            <!-- TODO: the timetable <table> goes here -->
-        </div>
+    </main>
+    <footer>
+        University Coding Society, 2026
+    </footer>
 
-        <div class="block" id="join">
-            <div class="heading">Join the society</div>
-            <!-- TODO: the registration <form> goes here -->
-        </div>
-
-        <div class="story" id="news">
-            <div class="heading">We won the hackathon</div>
-            <img src="team.jpg" alt="image">
-            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
-            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
-        </div>
-    </div>
-
-    <div class="bottom">University Coding Society, 2026</div>
 </body>
 </html>
