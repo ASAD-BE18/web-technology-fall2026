@@ -1,16 +1,8 @@
-# Lab 2 — Part D answers
+### Question 1: What is semantic HTML and why is it important?
+Semantic HTML means using tags that clearly describe their meaning and purpose, such as header, main, section, and footer. It is important because it makes the code readable for developers and helps search engines understand the webpage structure better.
 
-Write at least 2 full sentences under each "Your answer:" line, in your own
-words. Don't delete or change the question lines.
+### Question 2: Explain the difference between the block elements and inline elements.
+Block elements always start on a new line and take up the full width available, like header and section tags. Inline elements do not start on a new line and only take up as much space as their content needs, like strong or anchor tags.
 
-## Q1. In your form, why must a `<label>`'s `for` match its `<input>`'s `id`? What goes wrong if they don't match?
-
-Your answer:
-
-## Q2. You used both `<section>` and `<article>`. What is the difference? Why did the hackathon story become an `<article>`?
-
-Your answer:
-
-## Q3. What is the difference between `<th>` and `<td>`? Why should a table never be used to lay out a whole page?
-
-Your answer:
+### Question 3: What is the purpose of the action and method attributes in an HTML form?
+The action attribute specifies the URL or web address where the form data should be sent when submitted. The method attribute defines the HTTP transfer standard used to send that data, which is usually either GET or POST.

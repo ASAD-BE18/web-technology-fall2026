@@ -1,45 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
-    <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
-    <style>table, th, td { border: 1px solid black; }</style>
+    <meta charset="UTF-8">
+    <title>Lab 2 - Timetable and Form</title>
+    <!-- Sir ka username placeholder rule -->
+    <meta name="author" content="hamzakhanvb23-tech">
 </head>
 <body>
-    <!--
-        TODO (Lab 2): this page is built only from <div>s.
-        Rebuild it with semantic tags, then add the timetable and the form.
-        Follow Parts B and C of README.md. Delete this comment when you're done.
-    -->
-    <div class="top">
-        <div class="site-title">University Coding Society</div>
-        <div class="links">
-            <a href="#timetable">Timetable</a>
-            <a href="#join">Join</a>
-            <a href="#news">News</a>
-        </div>
-    </div>
 
-    <div class="content">
-        <div class="block" id="timetable">
-            <div class="heading">Weekly timetable</div>
-            <!-- TODO: the timetable <table> goes here -->
-        </div>
+    <!-- Requirement: Semantic Header -->
+    <header>
+        <h1>Web Technology Lab 2</h1>
+    </header>
 
-        <div class="block" id="join">
-            <div class="heading">Join the society</div>
-            <!-- TODO: the registration <form> goes here -->
-        </div>
+    <!-- Requirement: Semantic Main Content -->
+    <main>
+        <!-- Part B2: Timetable Section -->
+        <section id="timetable-section">
+            <h2>My Weekly Timetable</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>9:00 AM</th>
+                        <th>11:00 AM</th>
+                        <th>2:00 PM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Monday</strong></td>
+                        <td>Web Tech Lecture</td>
+                        <td>Lab Session</td>
+                        <td>Free Slot</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tuesday</strong></td>
+                        <td>Database Systems</td>
+                        <td>Free Slot</td>
+                        <td>Assignment Work</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wednesday</strong></td>
+                        <td>Web Tech Lab</td>
+                        <td>Data Structures</td>
+                        <td>Project Meeting</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        <div class="story" id="news">
-            <div class="heading">We won the hackathon</div>
-            <img src="team.jpg" alt="image">
-            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
-            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
-        </div>
-    </div>
+        <!-- Part B3: Registration Form Section -->
+        <section id="join-section">
+            <h2>Join Our Technology Society</h2>
+            <form action="#" method="post">
+                
+                <p>
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </p>
 
-    <div class="bottom">University Coding Society, 2026</div>
+                <p>
+                    <label for="email-addr">Email Address:</label>
+                    <input type="email" id="email-addr" name="email-addr" required>
+                </p>
+
+                <p>
+                    <label for="user-password">Password:</label>
+                    <input type="password" id="user-password" name="user-password" required>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="rules-agree" name="rules-agree" required>
+                    <label for="rules-agree">I agree to the society rules</label>
+                </p>
+
+                <p>
+                    <button type="submit">Submit Registration</button>
+                </p>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- Requirement: Semantic Footer -->
+    <footer>
+        <p>&copy; 2026 Hamza Khan. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
