@@ -16,7 +16,7 @@ Example .rice
 
 ## Q2. Why must every `<img>` have an `alt` attribute? Who uses it?
 
-alt is an attribute of <img> that gives short txt description of image 
+alt is an attribute of `<img>`that gives short txt description of image 
 If internet is slow it doesn't show the preview of image but visible text of image
 google search engine also use this attribute.
 
