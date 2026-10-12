@@ -5,7 +5,7 @@ words. Don't delete or change the question lines.
 
 ## Q1. In your form, why must a `<label>`'s `for` match its `<input>`'s `id`? What goes wrong if they don't match?
 
-Your answer: Matching the label's for attribute with the input's id establishes a programmatic link between the form label and its input field. If they do not match, screen readers will fail to announce the label to visually impaired users, and clicking on the label text will not focus the input box.
+Your answer: Matching the label's for attribute with the inputs id establishes a programmatic link between the form label and its input field. If they do not match, screen readers will fail to announce the label to visually impaired users, and clicking on the label text will not focus the input box.
 
 ## Q2. You used both `<section>` and `<article>`. What is the difference? Why did the hackathon story become an `<article>`?
 
