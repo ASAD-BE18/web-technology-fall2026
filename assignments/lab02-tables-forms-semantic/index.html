@@ -1,45 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
-    <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
-    <style>table, th, td { border: 1px solid black; }</style>
+  <meta charset="UTF-8">
+  <meta name="Tayyab" content="Dark mustang">
+  <title>CS Society</title>
 </head>
 <body>
-    <!--
-        TODO (Lab 2): this page is built only from <div>s.
-        Rebuild it with semantic tags, then add the timetable and the form.
-        Follow Parts B and C of README.md. Delete this comment when you're done.
-    -->
-    <div class="top">
-        <div class="site-title">University Coding Society</div>
-        <div class="links">
-            <a href="#timetable">Timetable</a>
-            <a href="#join">Join</a>
-            <a href="#news">News</a>
-        </div>
-    </div>
 
-    <div class="content">
-        <div class="block" id="timetable">
-            <div class="heading">Weekly timetable</div>
-            <!-- TODO: the timetable <table> goes here -->
-        </div>
+  <header>
+    <h1>CS Society</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#timetable">Timetable</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
 
-        <div class="block" id="join">
-            <div class="heading">Join the society</div>
-            <!-- TODO: the registration <form> goes here -->
-        </div>
+  <main>
+    <section id="about">
+      <article>
+        <h2>Hackathon Story</h2>
+        <p>Students built projects in 24 hours at our annual event.</p>
+        <img src="hackathon.jpg" alt="Students writing code on laptops">
+      </article>
+    </section>
 
-        <div class="story" id="news">
-            <div class="heading">We won the hackathon</div>
-            <img src="team.jpg" alt="image">
-            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
-            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
-        </div>
-    </div>
+    <section id="timetable">
+      <h2>Timetable</h2>
+      <table>
+        <tr><th>Day</th><th>Time</th><th>Activity</th></tr>
+        <tr><td>Mon</td><td>10 AM</td><td>Coding Workshop</td></tr>
+        <tr><td>Wed</td><td>02 PM</td><td>Guest Lecture</td></tr>
+        <tr><td>Fri</td><td>04 PM</td><td>Project Demo</td></tr>
+      </table>
+    </section>
 
-    <div class="bottom">University Coding Society, 2026</div>
+    <section id="join">
+      <h2>Join Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="pass"><br>
+
+        <label for="sem">Semester:</label>
+        <input type="number" id="sem" name="sem"><br>
+
+        <input type="checkbox" id="rules" name="rules">
+        <label for="rules">I agree to the society rules</label><br>
+
+        <button type="submit">Join</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS Society 2026</p>
+  </footer>
+
 </body>
 </html>
