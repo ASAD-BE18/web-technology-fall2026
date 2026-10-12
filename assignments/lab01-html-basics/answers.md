@@ -13,5 +13,4 @@ Your answer: The alt attribute provides a text description of an image if your i
 
 ## Q3. Your page links to `hobby.html` and to `https://...`. What is the difference between a relative link and an absolute link?
 
-Your answer: A relative link connects files inside your own project folder, i.e. linking to your local hobby.html file. 
-While an absolute link connects to a completely different website on the internet using a full URL like https://github.com.
+Your answer: A relative link connects files inside your own project folder, i.e. linking to your local hobby.html file. While an absolute link connects to a completely different website on the internet using a full URL like https://github.com.
