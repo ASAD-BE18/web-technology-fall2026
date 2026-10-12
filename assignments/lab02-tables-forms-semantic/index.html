@@ -1,11 +1,16 @@
-
+```html
 <!DOCTYPE html>
 <html>
 <head>
     <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
-    <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
-    <style>table, th, td { border: 1px solid black; }</style>
+    <meta name="author" content="Ayesha-Kaleem">
+
+    <!-- This CSS line makes table borders visible. CSS starts in Lab 3. -->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
 
@@ -67,25 +72,30 @@
                 <input type="password" id="password" name="password" required>
                 <br><br>
 
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" min="1" required>
+                <label for="semester">Semester:</label>
+                <input type="number" id="semester" name="semester" min="1" required>
                 <br><br>
 
                 <input type="checkbox" id="agreement" name="agreement" required>
-                <label for="agreement">I agree to join the Coding Society.</label>
+                <label for="agreement">I agree to the society rules</label>
                 <br><br>
 
-                <button type="submit">Join Now</button>
+                <button type="submit">Join</button>
             </form>
         </section>
 
         <section id="news">
             <article>
                 <h2>We won the hackathon</h2>
-                <img src="team.jpg" alt="University Coding Society team">
+
+                <img src="team.jpg"
+                     alt="University Coding Society team celebrating their hackathon win">
+
                 <p>Our team of four built a bus-tracking app in 24 hours and took first place.</p>
-                <p>To read the full story
-                    <a href="https://example.com/hackathon">click here</a>.
+
+                <p>
+                    Read the full story:
+                    <a href="https://example.com/hackathon">Read the full hackathon story</a>.
                 </p>
             </article>
         </section>
@@ -97,4 +107,5 @@
 
 </body>
 </html>
+```
 
