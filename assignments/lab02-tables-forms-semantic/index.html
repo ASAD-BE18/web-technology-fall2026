@@ -2,44 +2,88 @@
 <html>
 <head>
     <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
+    <meta name="author" content="farwasadiq">
     <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
     <style>table, th, td { border: 1px solid black; }</style>
 </head>
 <body>
-    <!--
-        TODO (Lab 2): this page is built only from <div>s.
-        Rebuild it with semantic tags, then add the timetable and the form.
-        Follow Parts B and C of README.md. Delete this comment when you're done.
-    -->
-    <div class="top">
-        <div class="site-title">University Coding Society</div>
-        <div class="links">
-            <a href="#timetable">Timetable</a>
-            <a href="#join">Join</a>
-            <a href="#news">News</a>
-        </div>
-    </div>
+        <header>
+            <h1>University Coding Society</h1>
+            <nav>
+                 <a href="#timetable">Timetable</a>
+                 <a href="#join">Join</a>
+                 <a href="#news">News</a>
+            </nav>
+        </header>
+    <main>
+        <section id ="timetable">
+            <h2>Weekly TimeTable</h2>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Activity</th>
+                </tr>
+                <tr>
+                    <td> Monday </td>
+                    <td> 3:00 PM </td>
+                    <td> web Development </td>
+                </tr>
+                <tr>
+                    <td> Wednesday </td>
+                    <td> 3:00 PM </td>
+                    <td> SQL lab </td>   
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td> 3:00 PM </td>
+                    <td> It lab </td>
+                </tr>
+            </table>
+        </section>
 
-    <div class="content">
-        <div class="block" id="timetable">
-            <div class="heading">Weekly timetable</div>
-            <!-- TODO: the timetable <table> goes here -->
-        </div>
+    <section id ="join">
+        <h2> Join the socitey</h2>
+        <form>
+            <p>
+                <label for="fname">Name:</label>
+                <input type="text" id="fname" name="fname">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </p>
+            <p>
+                 <label for="password">Password:</label> 
+                 <input type="password" id="password" name="password">     
+                </p>
+            <p>
+                <label for="Semester">Semester</label>
+                <input type="number" id="Semester" name="Semester">
+            </p>
+            <p>
+                <label for="agree">I agree to the socitey rules</label>
+                <input type="checkbox" id="agree" name="agree">            
+            </p>
+            <button type ="submit">Join</button>
+        </form>
+    </section>
 
-        <div class="block" id="join">
-            <div class="heading">Join the society</div>
-            <!-- TODO: the registration <form> goes here -->
-        </div>
+        <article id ="news">
+            <h2> we won the Hackthon</h2>
+            <img src="team.jpg" alt="team photo">
+            <p>
+                our team of ofur built a bus-tracking app in 24 hours
+                and took first place. 
+            </p>
+            <p> 
+                To read full story 
+                <a href="https://example.com/hackathon">click here</a>
+            </p>
+        </article>
+    </main>
 
-        <div class="story" id="news">
-            <div class="heading">We won the hackathon</div>
-            <img src="team.jpg" alt="image">
-            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
-            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
-        </div>
-    </div>
-
-    <div class="bottom">University Coding Society, 2026</div>
+    <footer>University Coding Society, 2026</footer>
+    
 </body>
 </html>
