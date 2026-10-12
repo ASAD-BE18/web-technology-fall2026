@@ -13,4 +13,4 @@ Your answer:<section> logicaly grouped the content of the related page. while ar
 
 ## Q3. What is the difference between `<th>` and `<td>`? Why should a table never be used to lay out a whole page?
 
-Your answer:<th> is the table heading tag. while <td> contains the data of a table.
+Your answer:<th> contains the heading of the table . while <td> contains the data of a table.
