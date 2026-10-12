@@ -1,114 +1,88 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Lab 2 - Timetable and Form</title>
+    
     <meta name="author" content="hamzakhanvb23-tech">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Society</title>
-
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
 </head>
 <body>
 
     <header>
-        <h1>University Coding Society</h1>
-
-        <nav>
-            <a href="#timetable">Timetable</a>
-            <a href="#join">Join</a>
-            <a href="#news">News</a>
-        </nav>
+        <h1>Web Technology Lab 2</h1>
     </header>
 
     <main>
-        <section id="timetable">
-            <h2>Weekly Timetable</h2>
-
-            <table>
+        <section id="timetable-section">
+            <h2>My Weekly Timetable</h2>
+            <table border="1">
                 <thead>
                     <tr>
                         <th>Day</th>
-                        <th>Time</th>
-                        <th>Activity</th>
+                        <th>9:00 AM</th>
+                        <th>11:00 AM</th>
+                        <th>2:00 PM</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Monday</td>
-                        <td>10:00 AM - 11:00 AM</td>
-                        <td>HTML and CSS</td>
+                        <td><strong>Monday</strong></td>
+                        <td>Web Tech Lecture</td>
+                        <td>Lab Session</td>
+                        <td>Free Slot</td>
                     </tr>
                     <tr>
-                        <td>Wednesday</td>
-                        <td>12:00 PM - 1:00 PM</td>
-                        <td>Python Programming</td>
+                        <td><strong>Tuesday</strong></td>
+                        <td>Database Systems</td>
+                        <td>Free Slot</td>
+                        <td>Assignment Work</td>
                     </tr>
                     <tr>
-                        <td>Friday</td>
-                        <td>2:00 PM - 3:00 PM</td>
-                        <td>Web Development</td>
+                        <td><strong>Wednesday</strong></td>
+                        <td>Web Tech Lab</td>
+                        <td>Data Structures</td>
+                        <td>Project Meeting</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="join">
-            <h2>Join the Society</h2>
-
+        <section id="join-section">
+            <h2>Join Our Technology Society</h2>
             <form action="#" method="post">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-                <br><br>
+                
+                <p>
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </p>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <br><br>
+                <p>
+                    <label for="email-addr">Email Address:</label>
+                    <input type="email" id="email-addr" name="email-addr" required>
+                </p>
 
-                <label for="student-id">Student ID:</label>
-                <input type="text" id="student-id" name="student-id" required>
-                <br><br>
+                <p>
+                    <label for="user-password">Password:</label>
+                    <input type="password" id="user-password" name="user-password" required>
+                </p>
 
-                <label for="interest">Area of Interest:</label>
-                <select id="interest" name="interest" required>
-                    <option value="">Select an option</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="python">Python Programming</option>
-                    <option value="app-development">App Development</option>
-                    <option value="ai">Artificial Intelligence</option>
-                </select>
-                <br><br>
+                <p>
+                    <input type="checkbox" id="rules-agree" name="rules-agree" required>
+                    <label for="rules-agree">I agree to the society rules</label>
+                </p>
 
-                <button type="submit">Register</button>
+                <p>
+                    <button type="submit">Submit Registration</button>
+                </p>
+
             </form>
         </section>
-
-        <article id="news">
-            <h2>We Won the Hackathon</h2>
-
-            <img src="team.jpg" alt="Coding Society team" width="300">
-
-            <p>
-                Our team of four built a bus-tracking app in 24 hours
-                and took first place.
-            </p>
-
-            <p>
-                To read the full story
-                <a href="https://example.com/hackathon">click here</a>.
-            </p>
-        </article>
     </main>
 
     <footer>
-        <p>University Coding Society, 2026</p>
+        <p>&copy; 2026 Hamza Khan. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-```
 
