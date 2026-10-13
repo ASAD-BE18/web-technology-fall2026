@@ -1,5 +1,4 @@
 # Lab 2 — Part D answers
-
 Write at least 2 full sentences under each "Your answer:" line, in your own
 words. Don't delete or change the question lines.
 
