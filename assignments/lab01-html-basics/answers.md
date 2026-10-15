@@ -14,3 +14,6 @@ Your answer:The alt attribute provides a text description of an image on a webpa
 ## Q3. Your page links to `hobby.html` and to `https://...`. What is the difference between a relative link and an absolute link?
 
 Your answer:A relative link points to a file or page using a path relative to the current page, such as hobby.html. An absolute link contains the complete URL, including the protocol and domain name, such as https://www.example.com. Relative links are useful for linking pages within the same website, while absolute links are commonly used to link to external websites.
+
+
+
