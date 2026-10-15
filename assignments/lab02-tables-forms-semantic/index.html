@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="Tayyab" content="Dark mustang">
-  <title>CS Society</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="DarkMustang007">
+    <title>Society Page</title>
 </head>
 <body>
 
-  <header>
-    <h1>CS Society</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#timetable">Timetable</a>
-      <a href="#join">Join</a>
-    </nav>
-  </header>
+    <header>
+        <h1>IT Society</h1>
+        <nav>
+            <a href="#t1">Schedule</a>
+            <a href="#f1">Join</a>
+            <a href="#a1">Story</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="about">
-      <article>
-        <h2>Hackathon Story</h2>
-        <p>Students built projects in 24 hours at our annual event.</p>
-        <img src="hackathon.jpg" alt="Students writing code on laptops">
-      </article>
-    </section>
+    <main>
+        <section id="t1">
+            <h2>Timetable</h2>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Class</th>
+                </tr>
+                <tr>
+                    <td>Mon</td>
+                    <td>4pm</td>
+                    <td>Web Dev</td>
+                </tr>
+                <tr>
+                    <td>Wed</td>
+                    <td>5pm</td>
+                    <td>Gaming</td>
+                </tr>
+                <tr>
+                    <td>Fri</td>
+                    <td>3pm</td>
+                    <td>Python</td>
+                </tr>
+            </table>
+        </section>
 
-    <section id="timetable">
-      <h2>Timetable</h2>
-      <table>
-        <tr><th>Day</th><th>Time</th><th>Activity</th></tr>
-        <tr><td>Mon</td><td>10 AM</td><td>Coding Workshop</td></tr>
-        <tr><td>Wed</td><td>02 PM</td><td>Guest Lecture</td></tr>
-        <tr><td>Fri</td><td>04 PM</td><td>Project Demo</td></tr>
-      </table>
-    </section>
+        <section id="f1">
+            <h2>Join Form</h2>
+            <form>
+                <label for="nm">Name:</label>
+                <input type="text" id="nm" name="nm"><br>
 
-    <section id="join">
-      <h2>Join Us</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
+                <label for="em">Email:</label>
+                <input type="email" id="em" name="em"><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br>
+                <label for="pw">Pass:</label>
+                <input type="password" id="pw" name="pw"><br>
 
-        <label for="pass">Password:</label>
-        <input type="password" id="pass" name="pass"><br>
+                <label for="sm">Term:</label>
+                <input type="number" id="sm" name="sm"><br>
 
-        <label for="sem">Semester:</label>
-        <input type="number" id="sem" name="sem"><br>
+                <input type="checkbox" id="ch" name="ch">
+                <label for="ch">I agree to rules</label><br>
 
-        <input type="checkbox" id="rules" name="rules">
-        <label for="rules">I agree to the society rules</label><br>
+                <button type="submit">Join</button>
+            </form>
+        </section>
 
-        <button type="submit">Join</button>
-      </form>
-    </section>
-  </main>
+        <article id="a1">
+            <h2>Hackathon News</h2>
+            <p>Our team joined the local campus hackathon event last weekend.</p>
+            <p>We built a project using clean scripts and won first place.</p>
+            <img src="hack.jpg" alt="A group of three students working together on laptops at a wooden desk">
+        </article>
+    </main>
 
-  <footer>
-    <p>CS Society 2026</p>
-  </footer>
+    <footer>
+        <p>&copy; 2026 IT Society.</p>
+    </footer>
 
 </body>
 </html>
