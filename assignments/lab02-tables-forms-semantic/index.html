@@ -63,6 +63,10 @@
                     <input type="password" id="password" name="password" required minlength="8">
                 </p>
                 <p>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </p>
+                <p>
                     <label for="year">Year:</label>
                     <select id="year" name="year">
                         <option value="freshman">Freshman</option>
@@ -73,11 +77,14 @@
                 </p>
                 <p>Preferred Track:</p>
                 <p>
-                    <label><input type="radio" name="track" value="web" checked> Web Dev</label>
-                    <label><input type="radio" name="track" value="ai"> AI</label>
+                    <input type="radio" id="track-web" name="track" value="web" checked>
+                    <label for="track-web">Web Dev</label>
+                    <input type="radio" id="track-ai" name="track" value="ai">
+                    <label for="track-ai">AI</label>
                 </p>
                 <p>
-                    <label><input type="checkbox" name="newsletter" value="yes"> Subscribe to newsletter</label>
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                    <label for="newsletter">Subscribe to newsletter</label>
                 </p>
                 <p>
                     <label for="message">Why do you want to join?</label><br>
