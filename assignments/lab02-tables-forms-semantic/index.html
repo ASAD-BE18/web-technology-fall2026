@@ -2,44 +2,94 @@
 <html>
 <head>
     <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
+    <meta name="author" content="ayeshasaad07">
     <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
     <style>table, th, td { border: 1px solid black; }</style>
 </head>
 <body>
-    <!--
-        TODO (Lab 2): this page is built only from <div>s.
-        Rebuild it with semantic tags, then add the timetable and the form.
-        Follow Parts B and C of README.md. Delete this comment when you're done.
-    -->
-    <div class="top">
-        <div class="site-title">University Coding Society</div>
-        <div class="links">
+
+    <header>
+        <h1>University Coding Society</h1>
+        <nav>
             <a href="#timetable">Timetable</a>
             <a href="#join">Join</a>
             <a href="#news">News</a>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="content">
-        <div class="block" id="timetable">
-            <div class="heading">Weekly timetable</div>
-            <!-- TODO: the timetable <table> goes here -->
-        </div>
+    <main>
+        <section id="timetable">
+            <h2>Weekly timetable</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Topic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>4:00 PM - 5:30 PM</td>
+                        <td>HTML Basics & Semantic Tags</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>4:00 PM - 5:30 PM</td>
+                        <td>CSS Styling & Layouts</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>3:00 PM - 5:00 PM</td>
+                        <td>JavaScript Fundamentals</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        <div class="block" id="join">
-            <div class="heading">Join the society</div>
-            <!-- TODO: the registration <form> goes here -->
-        </div>
+        <section id="join">
+            <h2>Join the Society</h2>
+            <form action="#" method="post">
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" required><br><br>
 
-        <div class="story" id="news">
-            <div class="heading">We won the hackathon</div>
-            <img src="team.jpg" alt="image">
-            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
-            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
-        </div>
-    </div>
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
 
-    <div class="bottom">University Coding Society, 2026</div>
+                <label for="year">Academic Year:</label><br>
+                <select id="year" name="year">
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select><br><br>
+
+                <label>Experience Level:</label><br>
+                <input type="radio" id="beginner" name="experience" value="beginner" checked>
+                <label for="beginner">Beginner</label><br>
+                <input type="radio" id="intermediate" name="experience" value="intermediate">
+                <label for="intermediate">Intermediate</label><br>
+                <input type="radio" id="advanced" name="experience" value="advanced">
+                <label for="advanced">Advanced</label><br><br>
+
+                <input type="submit" value="Submit Application">
+            </form>
+        </section>
+
+        <section id="news">
+            <h2>Society News</h2>
+            <article>
+                <h3>Welcome to Fall 2026!</h3>
+                <p>We are excited to launch our new weekly workshops on Web Development and Open Source contribution.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 University Coding Society. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
+        
