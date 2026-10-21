@@ -1,5 +1,4 @@
-/* author: your-github-username */
-
+/* author: AyeshaSaleem-Stack */
 /*
     TODO (Lab 3): style index.html by writing rules in THIS file only.
     Follow Parts B and C of README.md in this folder.
@@ -7,3 +6,32 @@
     GitHub username, and keep that line.
     You may delete this TODO comment when you're done.
 */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #f4f4f4;
+}
+h1 {
+    color: tomato;
+    text-align: center;
+}
+.tagline {
+    font-size: 20px;
+    text-align: center;
+}
+.card {
+    width: 300px;
+    padding: 16px;
+    border: 2px solid #1a5276;
+    margin: 20px;
+    background-color: white;
+}
+.note {
+    color: rgb(34, 139, 34);
+}
+#special {
+    color: purple;
+}
