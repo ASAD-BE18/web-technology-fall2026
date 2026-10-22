@@ -4,7 +4,7 @@
 
 Write ONE word after each colon, from the choices in brackets. Don't change anything else on the line.
 
-- W1 `@media (max-width: 600px)` applies when the screen is 600px or (wider / narrower):narrow
+- W1 `@media (max-width: 600px)` applies when the screen is 600px or (wider / narrower):narrower
 - W2 Without the viewport tag, a phone pretends its screen is (wide / narrow):wide
 
 ## Numbers
