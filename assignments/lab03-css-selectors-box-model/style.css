@@ -1,4 +1,4 @@
-/* author: your-github-username */
+/* author: farwabatool555 */
 
 /*
     TODO (Lab 3): style index.html by writing rules in THIS file only.
@@ -7,3 +7,33 @@
     GitHub username, and keep that line.
     You may delete this TODO comment when you're done.
 */
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background-color: #f5f5f5;
+}
+h1 {
+    color: tomato;
+    text-align: center;
+} 
+.tagline {
+    font-size: 18px;
+    text-align: center;
+}
+.card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 20px;
+    background-color: white;
+}
+.note {
+    color: #1a5276;
+}
+#special {
+    color: rgb(220, 20, 60);
+}
