@@ -19,4 +19,4 @@ Your answer: It describe the image if it doesn't load in a webpage.
 
 ## Q3. Your page links to `hobby.html` and to `https://...`. What is the difference between a relative link and an absolute link?
 
-Your answer: A relative link point out another link in the same  website, for example hobby.html / loginform.html. While an absolute link contains the complete URL of a website out side from the actual website. e.g https://google.com
+Your answer: A relative link point out another link in the same  website for example hobby.html / loginform.html. While an absolute link contains the complete URL of a website out side from the actual website.
