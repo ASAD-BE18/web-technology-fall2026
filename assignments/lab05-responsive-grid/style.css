@@ -1,9 +1,51 @@
-/* author: your-github-username */
+/* author: Ayesha-Kaleem */
 
-/*
-    TODO (Lab 5): make index.html responsive with CSS Grid and a media
-    query. Follow Parts B and C of README.md in this folder.
-    Replace "your-github-username" on the first line with your own
-    GitHub username, and keep that line.
-    You may delete this TODO comment when you're done.
-*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #1a5276;
+  color: white;
+}
+
+.menu a {
+  color: white;
+  margin-left: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  padding: 16px;
+  border: 2px solid #1a5276;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.tile {
+  padding: 16px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
