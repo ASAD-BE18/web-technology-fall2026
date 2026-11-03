@@ -6,9 +6,9 @@ Write ONE number after each colon (pixels, no "px"). Don't change anything else 
 
 A box has `width: 300px; padding: 20px; border: 5px solid; margin: 10px;`
 
-- N1 how wide the box is, not counting margin, with the default box-sizing:
-- N2 how wide the box is, not counting margin, with `box-sizing: border-box`:
-- N3 how wide the content area is, with `box-sizing: border-box`:
+- N1 how wide the box is, not counting margin, with the default box-sizing:350
+- N2 how wide the box is, not counting margin, with `box-sizing: border-box`:300
+- N3 how wide the content area is, with `box-sizing: border-box`:250
 
 ## Explain it
 
