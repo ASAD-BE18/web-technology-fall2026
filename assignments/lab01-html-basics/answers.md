@@ -5,11 +5,12 @@ words. Don't delete or change the question lines.
 
 ## Q1. What is the difference between `<ol>` and `<ul>`? Give one example of when you would use each.
 
-Your answer:<ol> is an ordered list and point out via numbers <ul> is and an unordered list that is use to create un sequenced bullet points.
-<ol> 1 . apple 
+Your answer:<ol> is an ordered list and point out via numbers.
+     1 . apple 
      2 . orange 
      3 . banana 
-<ul> o Apple 
+<ul> is and an unordered list that is use to create un sequenced bullet points.
+     o Apple 
      o Banana 
      o Elephent 
 
