@@ -16,7 +16,7 @@ Your answer:<ol> is an ordered list and point out via numbers.
 
 ## Q2. Why must every `<img>` have an `alt` attribute? Who uses it?
 
-Your answer: It describe the image if it doesn't load in a webpage. 
+Your answer: Every image needs an alt attribute to provide alternative description text. Visually impaired individuals use screen readers to hear this text.
 
 ## Q3. Your page links to `hobby.html` and to `https://...`. What is the difference between a relative link and an absolute link?
 
