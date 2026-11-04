@@ -1,5 +1,6 @@
 /* author: DarkMustang007 */
 
+/* Part B — Base Layout */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -17,12 +18,14 @@
   border: 1px solid #ccc;
 }
 
-/* Part C — Gallery Layout (8 characters or fewer in username) */
+/* Part C — Gallery Layout (14 characters = 4 columns) */
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 16px;
 }
+
+/* Part B & C — Mobile Layout */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
@@ -36,4 +39,3 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-
