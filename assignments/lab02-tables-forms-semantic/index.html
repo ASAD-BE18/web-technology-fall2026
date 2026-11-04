@@ -1,45 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
-    <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
-    <style>table, th, td { border: 1px solid black; }</style>
-</head>
+
 <body>
     <!--
         TODO (Lab 2): this page is built only from <div>s.
         Rebuild it with semantic tags, then add the timetable and the form.
         Follow Parts B and C of README.md. Delete this comment when you're done.
     -->
-    <div class="top">
-        <div class="site-title">University Coding Society</div>
-        <div class="links">
-            <a href="#timetable">Timetable</a>
-            <a href="#join">Join</a>
-            <a href="#news">News</a>
-        </div>
-    </div>
+    <header>
+    <h1>University Coding Society</h1>
+    <meta name="author" content="SherAli45">
+    <nav>
+        <a href="#timetable">Timetable</a>
+        <a href="#join">Join</a>
+        <a href="#news">News</a>
+    </nav>
+</header>
 
-    <div class="content">
-        <div class="block" id="timetable">
-            <div class="heading">Weekly timetable</div>
-            <!-- TODO: the timetable <table> goes here -->
-        </div>
+  
+<main>
+<section id="timetable">
+    <h2>Weekly timetable</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Activity</th>
+        </tr>
+    </thead>
 
-        <div class="block" id="join">
-            <div class="heading">Join the society</div>
-            <!-- TODO: the registration <form> goes here -->
-        </div>
+    <tbody>
+        <tr>
+            <td>Monday</td>
+            <td>10:00 AM</td>
+            <td>HTML Practice</td>
+        </tr>
 
-        <div class="story" id="news">
-            <div class="heading">We won the hackathon</div>
-            <img src="team.jpg" alt="image">
-            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
-            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
-        </div>
-    </div>
+        <tr>
+            <td>Wednesday</td>
+            <td>11:00 AM</td>
+            <td>Web Development</td>
+        </tr>
 
-    <div class="bottom">University Coding Society, 2026</div>
+        <tr>
+            <td>Friday</td>
+            <td>12:00 PM</td>
+            <td>Group Discussion</td>
+        </tr>
+    </tbody>
+</table>
+</section>
+
+<section id="join">
+    <h2>Join the society</h2>
+    <form>
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="semester">Semester:</label>
+    <input type="number" id="semester" name="semester">
+
+    <input type="checkbox" id="rules" name="rules">
+    <label for="rules">I agree to the society rules</label>
+
+    <button type="submit">Join</button>
+</form>
+</section>
+
+        <article id="news">
+    <h2>We won the hackathon</h2>
+   <img src="team.jpg" alt="University Coding Society">
+    <p>Our team of four built a bus-tracking app in 24 hours and took first place.</p>
+    <p>To read the full story <a href="https://example.com/hackathon">Read the full hackathon story</a>.</p>
+</article>
+</main>
+
+<footer>
+    University Coding Society, 2026
+</footer>
+   
+   
 </body>
+
 </html>
