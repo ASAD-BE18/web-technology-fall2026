@@ -1,4 +1,5 @@
 # Lab 3 — Part D answers
+GitHub username: SherAli45
 
 ## Box-model numbers
 
@@ -6,9 +7,9 @@ Write ONE number after each colon (pixels, no "px"). Don't change anything else 
 
 A box has `width: 300px; padding: 20px; border: 5px solid; margin: 10px;`
 
-- N1 how wide the box is, not counting margin, with the default box-sizing:
-- N2 how wide the box is, not counting margin, with `box-sizing: border-box`:
-- N3 how wide the content area is, with `box-sizing: border-box`:
+- N1 how wide the box is, not counting margin, with the default box-sizing:350
+- N2 how wide the box is, not counting margin, with `box-sizing: border-box`:300
+- N3 how wide the content area is, with `box-sizing: border-box`:250
 
 ## Explain it
 
@@ -17,8 +18,11 @@ words. Don't delete or change the question lines.
 
 ## Q1. In your page, `.note` and `#special` both set a colour for the second paragraph. Which colour does it show, and why?
 
-Your answer:
+Your answer:ID selector has more specificity than class 
+ class selector has less specific than ID  so second paragraph  show navy  colur. 
 
 ## Q2. What is the difference between `padding` and `margin`? Which one gets the card's background colour?
 
-Your answer:
+Your answer: padding:  space between  the  border.
+             Margin:space outside the  border.
+             backgroud colour depend on the content and  padding  area  so  its cannt depent on thee  margin .
