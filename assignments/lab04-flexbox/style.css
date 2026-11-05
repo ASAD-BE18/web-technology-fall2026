@@ -1,9 +1,64 @@
-/* author: your-github-username */
+/* author: Shameen-Zahra */
 
-/*
-    TODO (Lab 4): lay out index.html with Flexbox by writing rules in THIS
-    file only. Follow Parts B and C of README.md in this folder.
-    Replace "your-github-username" on the first line with your own
-    GitHub username, and keep that line.
-    You may delete this TODO comment when you're done.
-*/
+h1 {
+  color: purple;
+}
+
+h2 {
+  color: tomato;
+}
+
+p {
+  color: #555555;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: lightblue;
+}
+
+.menu {
+  display: flex;
+  gap: 16px;
+}
+
+.menu-link {
+  display: inline-block;
+  width: 100px;
+  color: darkblue;
+  font-weight: bold;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  padding: 16px;
+  border: 3px solid tomato;
+  background-color: #f0f8ff;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.badge {
+  position: relative;
+  top: 4px;
+  left: 6px;
+}
+
+
