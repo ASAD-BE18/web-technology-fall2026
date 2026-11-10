@@ -1,3 +1,4 @@
+
 # Lab 3 — Part D answers
 
 ## Box-model numbers
@@ -6,9 +7,9 @@ Write ONE number after each colon (pixels, no "px"). Don't change anything else 
 
 A box has `width: 300px; padding: 20px; border: 5px solid; margin: 10px;`
 
-- N1 how wide the box is, not counting margin, with the default box-sizing:
-- N2 how wide the box is, not counting margin, with `box-sizing: border-box`:
-- N3 how wide the content area is, with `box-sizing: border-box`:
+- N1 how wide the box is, not counting margin, with the default box-sizing: 350
+- N2 how wide the box is, not counting margin, with `box-sizing: border-box`: 300
+- N3 how wide the content area is, with `box-sizing: border-box`: 250
 
 ## Explain it
 
@@ -19,6 +20,10 @@ words. Don't delete or change the question lines.
 
 Your answer:
 
+The second paragraph shows the colour defined in the `#special` selector, which is `rgb(220, 80, 40)`. This happens because an ID selector has higher specificity than a class selector, so `#special` takes priority over `.note`.
+
 ## Q2. What is the difference between `padding` and `margin`? Which one gets the card's background colour?
 
 Your answer:
+
+Padding is the space between the content and the border of an element, while margin is the space outside the border. The background colour covers the content and padding area of the card, but it does not cover the margin.
