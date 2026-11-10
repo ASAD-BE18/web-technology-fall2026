@@ -1,9 +1,55 @@
-/* author: your-github-username */
 
-/*
-    TODO (Lab 4): lay out index.html with Flexbox by writing rules in THIS
-    file only. Follow Parts B and C of README.md in this folder.
-    Replace "your-github-username" on the first line with your own
-    GitHub username, and keep that line.
-    You may delete this TODO comment when you're done.
-*/
+/* author: waqas-hanif */
+
+/* Navbar layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* Menu layout */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Menu links */
+.menu-link {
+    display: inline-block;
+    width: 120px;
+}
+
+/* Project cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Individual card */
+.card {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+/* Quick links */
+.link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Hide old notice */
+.hidden {
+    display: none;
+}
+
+/* Move badges slightly */
+.badge {
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
