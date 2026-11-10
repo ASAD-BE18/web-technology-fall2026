@@ -16,7 +16,7 @@ words. Don't delete or change the question lines.
 
 ## Q1. Setting `width` on the menu links did nothing until you added `display: inline-block`. Why?
 
-Your answer: By default, an <a> element is inline, so its width and height cannot be set in the usual way. Adding display: inline-block allows us to set its width and height while keeping it in the same line as other elements.
+Your answer:  By default, an <a> element is inline, so its width and height cannot be set in the usual way. Adding display: inline-block allows us to set its width and height while keeping it in the same line as other elements.
 
 ## Q2. Does `display: flex` go on the parent or on the children? What happens to the children when you add it?
 
