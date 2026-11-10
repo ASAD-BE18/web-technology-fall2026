@@ -1,9 +1,89 @@
-/* author: your-github-username */
 
-/*
-    TODO (Lab 5): make index.html responsive with CSS Grid and a media
-    query. Follow Parts B and C of README.md in this folder.
-    Replace "your-github-username" on the first line with your own
-    GitHub username, and keep that line.
-    You may delete this TODO comment when you're done.
-*/
+/* author: alishbajahanzaib */
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Book cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+/* Book shelves */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.tile {
+    padding: 20px;
+    background-color: #e8d8c3;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Phone layout */
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
