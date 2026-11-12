@@ -2,44 +2,108 @@
 <html>
 <head>
     <title>Coding Society</title>
-    <meta name="author" content="your-github-username">
-    <!-- This one CSS line only makes table borders visible. CSS starts in Lab 3. -->
+    <meta name="author" content="fayyka">
     <style>table, th, td { border: 1px solid black; }</style>
 </head>
 <body>
-    <!--
-        TODO (Lab 2): this page is built only from <div>s.
-        Rebuild it with semantic tags, then add the timetable and the form.
-        Follow Parts B and C of README.md. Delete this comment when you're done.
-    -->
-    <div class="top">
-        <div class="site-title">University Coding Society</div>
-        <div class="links">
+    <header>
+        <h1>University Coding Society</h1>
+        <nav>
             <a href="#timetable">Timetable</a>
             <a href="#join">Join</a>
             <a href="#news">News</a>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="content">
-        <div class="block" id="timetable">
-            <div class="heading">Weekly timetable</div>
-            <!-- TODO: the timetable <table> goes here -->
-        </div>
+    <main>
+        <section id="timetable">
+            <h2>Weekly timetable</h2>
+            <table>
+                <caption>Coding Society Schedule - Fall 2026</caption>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Topic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>3pm - 4pm</td>
+                        <td>HTML Basics</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>3pm - 4pm</td>
+                        <td>CSS & Layouts</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>4pm - 6pm</td>
+                        <td>JavaScript Workshop</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        <div class="block" id="join">
-            <div class="heading">Join the society</div>
-            <!-- TODO: the registration <form> goes here -->
-        </div>
+        <section id="join">
+            <h2>Join the society</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                </p>
+                <p>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </p>
+                <p>
+                    <label for="year">Year:</label>
+                    <select id="year" name="year">
+                        <option value="freshman">Freshman</option>
+                        <option value="sophomore">Sophomore</option>
+                        <option value="junior">Junior</option>
+                        <option value="senior">Senior</option>
+                    </select>
+                </p>
+                <p>Preferred Track:</p>
+                <p>
+                    <input type="radio" id="track-web" name="track" value="web" checked>
+                    <label for="track-web">Web Dev</label>
+                    <input type="radio" id="track-ai" name="track" value="ai">
+                    <label for="track-ai">AI</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                    <label for="newsletter">Subscribe to newsletter</label>
+                </p>
+                <p>
+                    <label for="message">Why do you want to join?</label><br>
+                    <textarea id="message" name="message" rows="4" cols="30"></textarea>
+                </p>
+                <p>
+                    <button type="submit">Register</button>
+                </p>
+            </form>
+        </section>
 
-        <div class="story" id="news">
-            <div class="heading">We won the hackathon</div>
-            <img src="team.jpg" alt="image">
-            <div>Our team of four built a bus-tracking app in 24 hours and took first place.</div>
-            <div>To read the full story <a href="https://example.com/hackathon">click here</a>.</div>
-        </div>
-    </div>
+        <article id="news">
+            <h2>We won the hackathon</h2>
+            <img src="team.jpg" alt="Coding society team celebrating hackathon win with trophy">
+            <p>Our team of four built a bus-tracking app in 24 hours and took first place.</p>
+            <p>Read the full story on our <a href="https://example.com/hackathon">hackathon victory report</a>.</p>
+        </article>
+    </main>
 
-    <div class="bottom">University Coding Society, 2026</div>
+    <footer>University Coding Society, 2026</footer>
 </body>
 </html>
