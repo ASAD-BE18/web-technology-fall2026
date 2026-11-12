@@ -1,4 +1,4 @@
-/* author: your-github-username */
+/* author: AreeshaAmeer001 */
 
 /*
     TODO (Lab 4): lay out index.html with Flexbox by writing rules in THIS
@@ -7,3 +7,49 @@
     GitHub username, and keep that line.
     You may delete this TODO comment when you're done.
 */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-link {
+  display: inline-block;
+  width: 130px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 260px;
+  padding: 20px;
+  border: 1px solid #999;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.badge {
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+```
